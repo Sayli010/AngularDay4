@@ -1,0 +1,36 @@
+<div>
+    <button type="button" (click)="fetchData()"> Fetch Data </button>
+    <button type="button" style="margin-left: 10px;" (click)="createEmployee()"> Create Employee </button>
+    <button type="button" style="margin-left: 10px;" (click)="updateEmployeeRecord()"> Update Employee </button>
+    <button type="button" style="margin-left: 10px;" (click)="deleteEmployeeRecord()"> Delete Employee </button>
+</div>
+<hr>
+<div *ngIf="employeeData.length > 0">
+    <h3> Employee Data </h3>
+    <table border="1px">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>AGE</th>
+        </tr>
+        <tr  *ngFor="let item of employeeData">
+            <td> {{item.id}} </td>
+            <td> {{item.employee_name}} </td>
+            <td> {{item.employee_salary}} </td>
+            <td> {{item.employee_age}} </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="createEmployee">
+    <h5> Record created Successfully with the name {{createEmployee.name}} </h5>
+</div>
+
+<div *ngIf="updateEmployee">
+    <h5> Record updated Successfully with the job {{updateEmployee.job}} </h5>
+</div>
+
+<div *ngIf="deleteEmployee">
+    <h5> Record updated Successfully with the job {{deleteEmployee.job}} </h5>
+</div>
